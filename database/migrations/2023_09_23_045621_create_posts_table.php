@@ -29,9 +29,9 @@ return new class extends Migration
             $table->foreignId('weapon_id')->constrained(); 
             $table->foreignId('armor_id')->constrained(); 
             $table->foreignId('armor_port_id')->constrained(); 
-            $table->string('generator',20);
+            $table->string('generator');
             $table->integer('bookmark_number');
-            $table->string('remark',200);
+            $table->string('remark');
             $table->timestamps();
             $table->softDeletes();
         });

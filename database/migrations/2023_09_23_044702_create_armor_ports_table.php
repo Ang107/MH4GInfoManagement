@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('armor_ports', function (Blueprint $table) {
             $table->id();
-            $table->string('name',20);
+            $table->string('name');
         });
     }
 
