@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class Armor_PortSeeder extends Seeder
+class RoomUserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,14 +15,17 @@ class Armor_PortSeeder extends Seeder
      */
     public function run()
     {
-         DB::table('armor_ports')->insert(
+        DB::table('room_user')->insert(
             [
-                ['name' => '頭'],
-                ['name' => '胴'],
-                ['name' => '腕'],
-                ['name' => '腰'],
-                ['name' => '脚']
+                [
+                'user_id' => '1',
+                'room_id' => '1'
+                ],
+                [
+                'user_id' => '2',
+                'room_id' => '1'
+                ]
             ]
-         );
+        );
     }
 }

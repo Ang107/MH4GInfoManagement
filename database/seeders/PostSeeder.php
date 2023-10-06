@@ -33,7 +33,6 @@ class PostSeeder extends Seeder
             'armor_id' => '1',
             'armor_port_id' => '2',
             'generator' => 'Ang',
-            'bookmark_number' => '0',
             'remark' => '良いクエストです',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime()
