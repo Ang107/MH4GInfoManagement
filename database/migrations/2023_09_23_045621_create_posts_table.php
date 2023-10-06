@@ -30,7 +30,6 @@ return new class extends Migration
             $table->foreignId('armor_id')->constrained(); 
             $table->foreignId('armor_port_id')->constrained(); 
             $table->string('generator');
-            $table->integer('bookmark_number');
             $table->string('remark');
             $table->timestamps();
             $table->softDeletes();

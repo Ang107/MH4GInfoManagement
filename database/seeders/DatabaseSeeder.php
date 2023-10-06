@@ -19,12 +19,12 @@ class DatabaseSeeder extends Seeder
             WeaponSeeder::class,
             AreaSeeder::class,
             ArmorSeeder::class,
-            Armor_PortSeeder::class,
+            ArmorPortSeeder::class,
             UserSeeder::class,
             PostSeeder::class,
             BookmarkSeeder::class,
             RoomSeeder::class,
-            Room_UserSeeder::class,
+            RoomUserSeeder::class,
             MessageSeeder::class,
         ]);
     }
