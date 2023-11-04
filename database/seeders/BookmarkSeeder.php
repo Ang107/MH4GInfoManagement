@@ -20,14 +20,23 @@ class BookmarkSeeder extends Seeder
             [
                 [
                 'user_id' => '1',
-                'post_id' => '1',
-                'added_at' => new DateTime()
+                'post_id' => '2',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
                 ],
                 [
                 'user_id' => '2',
+                'post_id' => '2',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                ],
+                [
+                'user_id' => '1',
                 'post_id' => '1',
-                'added_at' => new DateTime()
-                ]
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                ],
+
             ]
         );
     }

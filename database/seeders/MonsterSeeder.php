@@ -17,6 +17,7 @@ class MonsterSeeder extends Seeder
     {
          DB::table('monsters')->insert(
             [
+                ['name' => '-----'],
                 ['name' => 'ラージャン'],
                 ['name' => 'イビルジョー'],
                 ['name' => 'ジンオウガ'],
@@ -40,7 +41,8 @@ class MonsterSeeder extends Seeder
                 ['name' => 'クシャルダオラ'],
                 ['name' => 'オオナズチ'],
                 ['name' => 'ゴアマガラ'],
-                ['name' => 'シャガルマガラ']
+                ['name' => 'シャガルマガラ'],
+
             ]
          );
     }

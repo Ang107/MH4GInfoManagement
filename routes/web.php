@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;  
+use App\Http\Controllers\UserController;  
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\RoomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,18 +18,61 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('home');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/config', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/config', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/config', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    Route::get('/posts/create', [PostController::class, 'create']);
+    
+    Route::get('/posts/myposts', [PostController::class, 'show_myposts']);
+    
+    Route::get('/posts/mybookmark', [PostController::class, 'show_mybookmark']);
+    
+    Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
+    
+    Route::post('/posts/bookmark', [PostController::class, 'bookmark'])->name('posts.bookmark');
+    
+    Route::post('/posts', [PostController::class, 'store']);
+    
+    Route::put('/posts/{post}', [PostController::class, 'update']);
+    
+    Route::delete('/posts/{post}', [PostController::class,'delete']);
+    
+    Route::get('/users/edit', [UserController::class ,'edit']);
+    
+    Route::get('/users/{user}', [UserController::class ,'show']);
+    
+    Route::put('/users/{user}', [UserController::class, 'update']);
+    
+    Route::get('/DM',  [RoomController::class, 'index']);
+    
+    Route::get('/DM/{user}',  [RoomController::class, 'show']);
+    
+    Route::post('/DM/{user}',  [MessageController::class, 'store']);
 });
 
+
+Route::get('/posts', [PostController::class, 'index']);
+
+Route::get('/posts/{post}', [PostController::class ,'show']);
+
+
+
 require __DIR__.'/auth.php';
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+

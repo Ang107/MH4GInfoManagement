@@ -1,0 +1,69 @@
+/*@media screen and (max-width: 480px) {*/
+	/* 480px以下に適用されるCSS（スマホ用） */
+/*	body {*/
+/*    margin: 0 3%;*/
+/*    }*/
+/*}*/
+/*@media screen and (min-width: 481px) {*/
+	/* 481px以上に適用されるCSS（PC用） */
+/*	body {*/
+/*    margin: 0 10%;*/
+/*    }*/
+/*}*/
+
+
+/*table{*/
+/*    margin-top: 30px;*/
+/*    margin-bottom: 30px;*/
+/*    text-align: center;*/
+/*    border-collapse:  collapse; */
+/*    border-color: gray;*/
+/*    width: 100%;*/
+/*}*/
+
+/*table td {*/
+/*    background: #eee;*/
+/*	padding: 10px 15px;*/
+/*}*/
+
+/*table th{*/
+/*    padding: 10px 15px;*/
+/*    background: #eee;*/
+/*}*/
+
+
+/*table tr:nth-child(even) td {*/
+/*	background: #fff;*/
+/*}*/
+
+/*table tr:nth-child(even) th {*/
+/*	background: #fff;*/
+/*}*/
+
+/*.mainth{*/
+/*    padding: 0px 5px;*/
+/*}*/
+
+/*.remark{*/
+/*    text-align: left;*/
+/*}*/
+
+/*.monster{*/
+/*    width: 30%*/
+/*}*/
+/*#URL{*/
+/*    font-size: 125%;*/
+/*}*/
+/*#width_limit{*/
+/*    width: 60%;*/
+/*}*/
+.bookmark-toggle {
+    cursor: pointer;
+}
+.star{
+    text-shadow: 0 0 5px #000;
+    color:white;
+}
+.bookmarked {
+    color: yellow;
+}

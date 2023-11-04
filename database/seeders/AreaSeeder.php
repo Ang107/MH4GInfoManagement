@@ -17,6 +17,7 @@ class AreaSeeder extends Seeder
     {
          DB::table('areas')->insert(
             [
+                ['name' => '--'],
                 ['name' => '水'],
                 ['name' => '天'],
                 ['name' => '蔦'],
@@ -27,7 +28,7 @@ class AreaSeeder extends Seeder
                 ['name' => '柱'],
                 ['name' => '豚'],
                 ['name' => '柱'],
-                ['name' => '無し'],
+
             ]
         );
     

@@ -1,0 +1,12 @@
+
+
+.bookmark-toggle {
+    cursor: pointer;
+}
+.star{
+    text-shadow: 0 0 5px #000;
+    color:white;
+}
+.bookmarked {
+    color: yellow;
+}

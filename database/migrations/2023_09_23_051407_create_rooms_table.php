@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('invite_user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('invited_user_id')->constrained('users')->onDelete('cascade');
+            $table->string('last_sent_message')->nullable();
             $table->timestamp('last_sent_at');
         });
     }
