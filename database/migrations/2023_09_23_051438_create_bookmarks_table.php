@@ -14,10 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('bookmarks', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained(); 
-            $table->foreignId('post_id')->constrained(); 
-            $table->timestamp('added_at');     
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
+            $table->foreignId('post_id')->constrained()->onDelete('cascade'); 
+            $table->timestamps();     
             $table->softDeletes();
+            $table->unique(['user_id','post_id'],'unique_name');
         });
     }
 

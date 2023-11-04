@@ -17,6 +17,9 @@ class RoomSeeder extends Seeder
     {
         DB::table('rooms')->insert(
             [
+            'invite_user_id' => '1',
+            'invited_user_id' => '2',
+            'last_sent_message' => 'ラストメッセージ',
             'last_sent_at' => new DateTime()
             ]
         );

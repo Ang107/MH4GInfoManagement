@@ -18,9 +18,14 @@
         @method('patch')
 
         <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
+            <x-input-label :value="__('アカウントの公開設定')" />
+            @if ($user->private == 0)
+                <label><input type="radio" name="private" class="radio" value="0" checked>公開</label>
+                <label><input type="radio" name="private" class="radio ml-4" value="1">非公開</label>  
+            @else
+                <label><input type="radio" name="private" class="radio" value="0">公開</label>
+                <label><input type="radio" name="private" class="radio ml-4" value="1" checked>非公開</label>
+            @endif
         </div>
 
         <div>
