@@ -239,9 +239,17 @@
                             </td>
                             <td class="default_level px-2 py-2.5 w-[6%]">{{ $post->default_level}}</td>
                             <td class="monster px-2 py-2.5 w-[9%]">{{ $post->left_monster->name}}</td>
-                            <td class="monster_area px-2 py-2.5 w-[5%]">{{ $post->left_monster_area}}</td>
+                            @if ( $post->left_monster_area == -1)
+                                <td class="monster_area px-2 py-2.5 w-[5%]">---</td>
+                            @else
+                                <td class="monster_area px-2 py-2.5 w-[5%]">{{ $post->left_monster_area}}</td>
+                            @endif
                             <td class="monster px-2 py-2.5  w-[9%]">{{ $post->right_monster->name}}</td>
-                            <td class="monster_area px-2 py-2.5 w-[5%]">{{ $post->right_monster_area}}</td>
+                            @if ( $post->right_monster_area == -1)
+                                <td class="monster_area px-2 py-2.5 w-[5%]">---</td>
+                            @else
+                                <td class="monster_area px-2 py-2.5 w-[5%]">{{ $post->right_monster_area}}</td>
+                            @endif
                             <td class="area px-2 py-2.5 w-[9%]">{{ $post->area_1->name}}-{{ $post->area_2->name}}-{{ $post->area_3->name}}-{{ $post->area_4->name}}</td>
                             @if ( $post->treasure_area_number == -1)
                                 <td class="treasure_area_number px-2 py-2.5 w-[5%]">-不明-</td>
