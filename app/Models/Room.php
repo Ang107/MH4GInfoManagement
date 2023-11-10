@@ -35,6 +35,7 @@ class Room extends Model
     'invite_user_id',
     'invited_user_id',
     'last_sent_message'
+    
     ];
     protected $dates = [
     'last_sent_at',
