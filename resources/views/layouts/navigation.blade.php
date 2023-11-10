@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center ">
                     <a class="" href="{{ route('home') }}">
-                        <img class="h-20" src="/image/logo.png" alt="ロゴ">
+                        <img class="h-16" src="/image/logo.png" alt="ロゴ">
                     </a>
                 </div>
 
@@ -47,9 +47,16 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link href="/users/{{Auth::id()}}">
-                            {{ __('マイプロフィール') }}
-                        </x-dropdown-link>
+                        @auth
+                            <x-dropdown-link href="/users/{{Auth::id()}}">
+                                {{ __('マイプロフィール') }}
+                            </x-dropdown-link>
+                        @endauth
+                        @guest
+                            <x-dropdown-link href="/login">
+                                {{ __('マイプロフィール') }}
+                            </x-dropdown-link>
+                        @endguest
                         <x-dropdown-link href="/posts/myposts">
                             {{ __('マイギルクエの管理') }}
                         </x-dropdown-link>
@@ -126,10 +133,16 @@
             </div>
 
             <div class="mt-3 space-y-1">
-                
-                <x-responsive-nav-link href="/users/{{Auth::id()}}">
-                    {{ __('マイプロフィール') }}
-                </x-responsive-nav-link>
+                @auth
+                    <x-responsive-nav-link href="/users/{{Auth::id()}}">
+                        {{ __('マイプロフィール') }}
+                    </x-responsive-nav-link>
+                @endauth
+                @guest
+                    <x-responsive-nav-link href="/login">
+                        {{ __('マイプロフィール') }}
+                    </x-responsive-nav-link>
+                @endguest
                 <x-responsive-nav-link href="/posts/myposts">
                     {{ __('マイギルクエの管理') }}
                 </x-responsive-nav-link>

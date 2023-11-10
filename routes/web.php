@@ -20,15 +20,11 @@ use App\Http\Controllers\RoomController;
 
 
 
-Route::get('/', function () {
-    return view('home');
-});
 
-Route::get('/dashboard', function () {
-    return view('home');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
+    
     Route::get('/config', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/config', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/config', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -69,10 +65,14 @@ Route::get('/posts/{post}', [PostController::class ,'show']);
 
 
 
-require __DIR__.'/auth.php';
+Route::get('/', function () {
+    return view('home');
+    });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+require __DIR__.'/auth.php';
+
+
 
 

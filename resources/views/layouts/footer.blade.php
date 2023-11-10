@@ -37,7 +37,7 @@
         </div>
     </div>
     <div class="bg-gray-900 border-t text-white flex justify-center py-2">
-        <p>Copyright © 2023 MH4Gギルクエ管理. All Rights Reserved.</p>
+        <p>Copyright © 2023 MH4G情報管理.com. All Rights Reserved.</p>
     </div>
   
 

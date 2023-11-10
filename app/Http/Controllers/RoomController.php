@@ -31,12 +31,12 @@ class RoomController extends Controller
         $room = new Room();
         
         if ($room->where('invite_user_id', $user->id)->where('invited_user_id', Auth::id())->exists()){
-            $room = $room->where('invite_user_id', $user->id)->where('invited_user_id', Auth::id())->first(['id']);
+            $room = $room->where('invite_user_id', $user->id)->where('invited_user_id', Auth::id())->first();
             $messages = $messages->where('room_id',$room->id)->get();
             return view('room.show')->with(['messages' => $messages, 'user' => $user, 'room' => $room]);
         }
         else if ($room->where('invited_user_id', $user->id)->where('invite_user_id', Auth::id())->exists()){
-            $room = $room->where('invited_user_id', $user->id)->where('invite_user_id', Auth::id())->first(['id']);
+            $room = $room->where('invited_user_id', $user->id)->where('invite_user_id', Auth::id())->first();
             $messages = $messages->where('room_id',$room->id)->get();
             return view('room.show')->with(['messages' => $messages, 'user' => $user, 'room' => $room]);
         }

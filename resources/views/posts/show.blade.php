@@ -31,9 +31,7 @@
                     <span class="block align-middle flex justify-between">
                         @auth
                             @if (Auth::id()!=$post->user->id)
-                                <form id="send_DM" action="/DM/{}" method="GET" class="inline-block">
-                                    <input type="submit" value="投稿者にDMを送る" id="filter_button" class="bg-gray-100 hover:bg-gray-300 text-blue-500 font-bold py-2 px-4 border-2 border-gray-400 rounded ml-6 ">
-                                </form>
+                                <button type="button" class="bg-gray-100 hover:bg-gray-300 text-blue-500 font-bold py-2 px-4 border-2 border-gray-400 rounded ml-6 " onclick="location.href='/DM/{{$post->user_id}}'">投稿者にDMを送る</button>
                             @else
                                 <button type="button" class="bg-gray-100 hover:bg-gray-300 text-blue-500 font-bold py-2 px-4 border-2 border-gray-400 rounded ml-3" onclick="location.href='/posts/{{ $post->id }}/edit'">
                                     編集
@@ -75,13 +73,21 @@
                             <td>
                                 <p for="LMonster" class=" m-3 mb-0 text-xl font-semibold text-gray-900 ">左モンスター/初期エリア</p>
                             </td>
-                            <td class="monster">{{ $post->left_monster->name}}-{{ $post->left_monster_area}}</td>
+                            @if ( $post->left_monster_area == -1)
+                                <td class="">{{ $post->left_monster->name}}---</td>
+                            @else
+                                <td class="">{{ $post->left_monster->name}}-{{ $post->left_monster_area}}</td>
+                            @endif
                         </tr>
                         <tr class="border-b ">
                             <td>
                                 <p for="RMonster" class=" m-3 mb-0 text-xl font-semibold text-gray-900 ">右モンスター/初期エリア</p>
                             </td>
-                            <td class="monster">{{ $post->right_monster->name}}-{{ $post->right_monster_area}}</td>
+                            @if ( $post->right_monster_area == -1 )
+                                <td class="">{{ $post->right_monster->name}}---</td>
+                            @else
+                                <td class="">{{ $post->right_monster->name}}-{{ $post->right_monster_area}}</td>
+                            @endif
                         </tr>
                         <tr class="border-b ">
                             <td >
