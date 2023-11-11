@@ -1,66 +1,125 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
+<span align="center">![logo](https://github.com/Ang107/MH4GInfoManagement/assets/94608326/3ff8c446-3123-4915-b835-8bdfdb822eea)</span>
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<img src="https://img.shields.io/badge/Laravel-v9.52.16-green.svg" alt="Laravel version">
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# MH4G情報管理.com
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### このWebアプリについて
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<p>
+  　このwebアプリは<a href="https://game.capcom.com/manual/MH4G/ja/">MonsterHunter4G</a>というゲームの情報をフォーマットを統一して共有、管理することを目的として制作しました。
+  このwebアプリでは、ゲーム内の情報の中で、"ギルドクエスト"というものに焦点を当てました。ギルドクエスト、通称ギルクエとは、ゲーム内で乱数で生成されるものです。乱数により、討伐対象のモンスターの種類や数、報酬のレア度や種類や数、フィールドの地形などが決定されます。
+ 先にあげたような、多岐に渡る項目がランダムに決定されるため、自分の欲しいギルクエを生成するのは、非常に難易度が高く、時間もかかることになります。
+</p>
+<p>
+　しかし、ギルクエは自身で生成する以外にも入手方法が存在します。それは、オンライン通信を介して他の人から貰う、というものです。そこで、有志の制作したMH4Gのコミュニティ内では、それぞれの所持しているギルクエをメモ帳やエクセルにまとめ、それを共有する形で、交換・譲渡が行われています。しかし、そのような方法では、誰がどの様なギルクエを持っているか不明瞭なうえに、自分の欲しいギルクエを探すことも目視で行うしかなく、大変である、という課題がありました。
+</p>
+<p>
+ そのような課題を解決することができるのが、この"MH4G情報管理.com"です。
+</p>
+<p><a href="mh4g-info-management.com">こちら</a>からアクセスできます。</p>
+      
+ <br>
+ 
+### 制作の背景
+<p>
+  制作の背景として、まず第一に、私自身がこのMH4Gというゲームが好きであり、また、古いゲームながらも根強い人気があるというのが挙げられます。
+ 次に、ニッチな分野であるが故に、既存のサービスが存在しないこと、"このWebアプリについて"に書いたような確実な需要があることが挙げられます。
+ <br>
+  ユーザーが少数であったとしても、既存サービスでは解決できないニーズを解決したい、という思いで制作しました。
+</p>
+ <br>
+ 
+### トップページイメージ
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<span align="center">
+    <img src=https://github.com/Ang107/MH4GInfoManagement/assets/94608326/4e16f337-9ab6-4e9c-92a4-cf7f6ff05713>
+</span>
 
-## Learning Laravel
+ </br>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### このWebアプリでできること
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+##### ・ギルクエ投稿
+<p>
+ギルドクエスト情報を投稿するこどができます。投稿後、編集削除を行えます。<br>
+自分の投稿したギルクエは、まとめて管理することができ、絞り込みや並び替えに対応しています。</p>
 
-## Laravel Sponsors
+##### ・ギルクエ閲覧
+<p>
+自分や他の人が投稿したギルクエを見ることができます。<br>
+絞り込みや並び替えに対応しており、気に入ったクエストはブックマークをすることができます。
+ブクマしたギルクエを閲覧することもできます。</p>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+##### ・ダイレクトメッセージ
+<p>
+DMを送受信できます。<br>
+自分の欲しいギルクエを投稿した人にDMを送ることで、譲渡や交換の依頼を行えます。
+</p>
 
-### Premium Partners
+##### ・アカウントの公開非公開設定
+<p>
+    アカウントを公開・非公開を切り替えることができます。
+    DM機能や、ギルドクエストの交換や譲渡など、交流を目的としたユーザーはアカウントを公開に、自身の所持しているギルクエを管理することを目的としたユーザーはアカウントを非公開にすることで、様々な需要をカバーしています。
+</p>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+ </br>
 
-## Contributing
+### 制作する上で工夫した点
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+##### ・ページ遷移（ロード、リロード）の回数
 
-## Code of Conduct
+<p>Webサイトの使用者の立場に立った時、ページ遷移の回数は少ない方が楽なのではと考え、絞り込み機能使用時にモーダルを用いたり、ブックマーク機能呼び出し時にjQueryを用いてAjax通信をするよう実装したりすることで、ページの遷移回数を減らすように制作しました。</p>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+##### ・UI
 
-## Security Vulnerabilities
+<p>直感的に使用しやすいデザインになる用意識しました。</p>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+##### ・絞り込み、並び替え機能
 
-## License
+<p>自身の欲しいギルクエを効率的に探せるように、絞り込み、並び替え機能を実装しました。</p>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+##### ・フォーマット統一
+
+<p>投稿するギルクエの殆んどの項目を入力式ではなく、選択式としたことで、誤字を防ぎ、フォーマットを統一することができ、並び替え機能を損なわないようにしました。</p>
+
+
+
+ </br>
+ 
+### 開発環境
+ 
+ <p>・AWS-cloud9</p>
+ 
+ <p>・Laravel 9.52.16</p>
+ 
+  </br>
+  
+### 本番環境
+ 
+ <p>・サクラVPS</p>
+ 
+ <p>・centos stream9</p>
+ 
+ <p>・nginx 1.22.1</p>
+    
+ <p>・Laravel 9.52.16</p>
+ 
+  </br>
+
+### ER図
+
+<img src="https://github.com/Ang107/MH4GInfoManagement/assets/94608326/2bdf90fe-1cd4-4f86-a907-f4bf05aa7c01" >
+
+</br>
+  
+ ### 制作者情報
+ 
+ <p>作成：鍋田 昂佑</p>
+ <p>お問い合わせは（ main@mh4g-info-management.com )にお願いいたします。</p>
+ 
+  </br>
+  
