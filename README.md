@@ -19,7 +19,7 @@
 <p>
  そのような課題を解決することができるのが、この"MH4G情報管理.com"です。
 </p>
-<p><a href="mh4g-info-management.com">こちら</a>からアクセスできます。</p>
+<p><a href="https://mh4g-info-management.com/">こちら</a>からアクセスできます。</p>
       
  <br>
  
