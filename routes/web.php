@@ -23,7 +23,7 @@ use App\Http\Controllers\RoomController;
 
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware('verified')->group(function () {
     
     Route::get('/config', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/config', [ProfileController::class, 'update'])->name('profile.update');
