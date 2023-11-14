@@ -18,13 +18,13 @@
                                                     {{$room->invite_user->name}}
                                                 </a>
                                             </td>
-                                            <td class="w-[50%]">
-                                                <a class="block w-full h-full p-2 " href="/DM/{{$room->invite_user->id}}">
+                                            <td class="w-[50%] ">
+                                                <a class="block w-full h-full py-3 text-gray-500" href="/DM/{{$room->invite_user->id}}">
                                                     {{$room->last_sent_message}}
                                                 </a>
                                             </td>
                                             <td class="w-[25%] rounded-r-lg">
-                                                <a class="block w-full h-full p-2 text-center" href="/DM/{{$room->invite_user->id}}">
+                                                <a class="block w-full h-full py-1 text-center" href="/DM/{{$room->invite_user->id}}">
                                                     {{$room->last_sent_at->format('Y-m-d')}}<br>{{$room->last_sent_at->format('H:i')}}
                                                 </a>
                                             </td>
@@ -37,12 +37,12 @@
                                             </a>
                                         </td>
                                         <td class="w-[50%]">
-                                            <a class="block w-full h-full p-2 " href="/DM/{{$room->invited_user->id}}">
+                                            <a class="block w-full h-full py-3 text-gray-500" href="/DM/{{$room->invited_user->id}}">
                                                 {{$room->last_sent_message}}
                                             </a>
                                         </td>
                                         <td class="w-[25%] rounded-r-lg">
-                                            <a class="block w-full h-full p-2 text-center" href="/DM/{{$room->invited_user->id}}">
+                                            <a class="block w-full h-full py-1 text-center" href="/DM/{{$room->invited_user->id}}">
                                                 {{$room->last_sent_at->format('Y-m-d')}}<br>{{$room->last_sent_at->format('H:i')}}
                                             </a>
                                         </td>

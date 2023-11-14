@@ -51,13 +51,14 @@ Route::middleware('verified')->group(function () {
     
     Route::put('/users/{user}', [UserController::class, 'update']);
     
-    Route::get('/DM',  [RoomController::class, 'index']);
+    
     
     Route::get('/DM/{user}',  [RoomController::class, 'show']);
     
     Route::post('/DM/{user}',  [MessageController::class, 'store']);
 });
 
+Route::get('/DM',  [RoomController::class, 'index']);
 
 Route::get('/posts', [PostController::class, 'index']);
 
