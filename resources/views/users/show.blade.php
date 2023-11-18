@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <title>ユーザープロフィール</title>
+        <title>ユーザープロフィール / MH4G情報管理.com</title>
     </head>
     <x-app-layout>
     <body class="bg-gray-200">

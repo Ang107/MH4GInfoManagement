@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <title>ギルクエ一覧</title>
+        <title>ブクマしたギルクエ / MH4G情報管理.com</title>
         <link rel="stylesheet" href="/css/posts/index.css" type="text/css">
         @vite(['resources/css/app.css','resources/js/_ajaxbookmark.js'])
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
