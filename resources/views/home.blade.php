@@ -65,7 +65,7 @@
                     <h2 class="text-2xl font-semibold py-3 bg-blue-200  rounded-lg"><更新履歴></h2>
                     <div class="overflow-y-scroll h-[20vh]">
                        <div class="">
-                            <p class="text-xl text-red-500 font-semibold pl-6 inline-block py-2">2023-11-17 : </p>
+                            <p class="text-xl text-red-500 font-semibold pl-6 inline-block py-2">2023-11-18 : </p>
                             <p class="text-xl inline-block py-2">リリース開始！</p>
                         </div> 
                         
