@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <title>ギルクエ詳細</title>
+        <title>ギルクエ詳細 / MH4G情報管理.com</title>
         <!-- Fonts -->
         <link rel="stylesheet" href="../../../css/posts/show.css" type="text/css">
         @vite(['resources/css/app.css','resources/js/_ajaxbookmark.js'])

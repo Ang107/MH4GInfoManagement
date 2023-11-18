@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <title>ギルクエ一覧</title>
+        <title>ホーム / MH4G情報管理.com</title>
      
         @vite(['resources/css/app.css','resources/js/_ajaxbookmark.js'])
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
@@ -61,12 +61,12 @@
                 </div>
                 
                 
-                <div class="shadow space-y-4 rounded-lg ">
+                <div class="shadow  rounded-lg ">
                     <h2 class="text-2xl font-semibold py-3 bg-blue-200  rounded-lg"><更新履歴></h2>
-                    <div class="overflow-y-scroll h-[10vh]">
-                       <div>
-                            <p class="text-xl text-red-500 font-semibold pl-6 inline-block py-2">2023-10-29 : </p>
-                            <p class="text-xl inline-block py-2">年内リリース予定！</p>
+                    <div class="overflow-y-scroll h-[20vh]">
+                       <div class="">
+                            <p class="text-xl text-red-500 font-semibold pl-6 inline-block py-2">2023-11-18 : </p>
+                            <p class="text-xl inline-block py-2">リリース開始！</p>
                         </div> 
                         
                     </div>

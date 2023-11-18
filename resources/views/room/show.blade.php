@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <title>DM詳細</title>
+        <title>DM詳細 / MH4G情報管理.com</title>
  
    
     </head>

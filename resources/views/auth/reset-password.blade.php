@@ -1,3 +1,6 @@
+<head>
+        <title>パスワード再設定 / MH4G情報管理.com</title>
+</head>
 <x-guest-layout>
     <form method="POST" action="{{ route('password.store') }}">
         @csrf

@@ -1,3 +1,6 @@
+<head>
+        <title>ログイン / MH4G情報管理.com</title>
+</head>
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
