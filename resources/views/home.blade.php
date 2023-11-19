@@ -68,7 +68,10 @@
                             <p class="text-xl text-red-500 font-semibold pl-6 inline-block py-2">2023-11-18 : </p>
                             <p class="text-xl inline-block py-2">リリース開始！</p>
                         </div> 
-                        
+                        <div class="">
+                            <p class="text-xl text-red-500 font-semibold pl-6 inline-block py-2">2023-11-199 : </p>
+                            <p class="text-xl inline-block py-2">ギルクエ投稿時のエリア選択肢を修正</p>
+                        </div> 
                     </div>
                     
                     
