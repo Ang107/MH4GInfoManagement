@@ -27,7 +27,7 @@ class AreaSeeder extends Seeder
                 ['name' => '紫'],
                 ['name' => '柱'],
                 ['name' => '豚'],
-                ['name' => '柱'],
+                ['name' => '迷'],
 
             ]
         );
