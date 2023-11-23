@@ -294,7 +294,7 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
         <script>
-            
+            //絞り込み検索時に検索時の情報に更新
             document.getElementById('UserID').value = "{{ $request->query('UID')}}";
             document.getElementById('Level').value = "{{ $request->query('Lv')}}";
             document.getElementById('LMonster').value = "{{ $request->query('Lmon')}}";
@@ -310,7 +310,7 @@
             document.getElementById('Armor').value = "{{$request->query('Arm')}}";
             document.getElementById('ArmorPort').value = "{{ $request->query('ArmPo')}}";
             
-            
+            //絞り込みリセット
             function filterReset(){
                 document.getElementById('Level').value = -1;
                 document.getElementById('LMonster').value = 1;

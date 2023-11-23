@@ -175,12 +175,14 @@
                 </div>
             </div>
             <script>
+                //デフォルトレベルが不明なら空に
                 if ( "{{$post->default_level }}" == "-不明-"){
                     document.getElementById('Level').value = "";
                 }
                 else{
                     document.getElementById('Level').value ="{{ $post->default_level}}";
                 }
+                //編集前の情報に更新
                 document.getElementById('LMonster').value = "{{ $post->left_monster_id}}";
                 document.getElementById('LMonsterArea').value = "{{ $post->left_monster_area}}";
                 document.getElementById('RMonster').value = "{{ $post->right_monster_id}}";
@@ -195,6 +197,7 @@
                 document.getElementById('ArmorPort').value = "{{ $post->armor_port_id}}";
                 document.getElementById('generator').value = "{{ $post->generator}}";
                 
+                //バリデーションエラー前の情報に更新
                 if ("{{ old('post.default_level')}}" != ""){
                 document.getElementById('Level').value ="{{ old('post.default_level')}}";
                 }

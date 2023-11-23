@@ -15,7 +15,7 @@ use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
-
+    #ギルクエ一覧
     public function index(Post $post,Request $request,)
     {
         $areas = Area::get();
@@ -40,6 +40,7 @@ class PostController extends Controller
         }
     }
     
+    #マイギルクエ一覧
     public function show_myposts(Post $post,Request $request,)
     {
         $areas = Area::get();
@@ -64,6 +65,7 @@ class PostController extends Controller
         }
     }
     
+    #ブクマしたギルクエ一覧
     public function show_mybookmark(Post $post,Request $request,)
     {
         $areas = Area::get();
@@ -87,12 +89,15 @@ class PostController extends Controller
                 return view('posts.show_mybookmark')->with(['posts' => $post->getPaginateByLimitNewer_mybookmark(20,$request),'sort' => "newer", 'areas' => $areas, 'armors' => $armors, 'armor_ports' => $armor_ports,'monsters' => $monsters, 'weapons' => $weapons,'request' => $request]);
         }
     }
+    
+    #ギルクエ詳細
     public function show(Post $post)
     {
         return view('posts.show')->with(['post' => $post]);
      //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
     }
     
+    #ブックマーク
     public function bookmark(Request $request)
     {
         $user_id = Auth::user()->id; // ログインしているユーザーのidを取得
@@ -119,6 +124,7 @@ class PostController extends Controller
         
     }
     
+    #ギルクエ投稿画面
     public function create()
     {
         $areas = Area::get();
@@ -129,6 +135,7 @@ class PostController extends Controller
         return view('posts.create')->with(['areas' => $areas, 'armors' => $armors, 'armor_ports' => $armor_ports,'monsters' => $monsters, 'weapons' => $weapons,]);
     }
     
+    #ギルクエ登録
     public function store(PostRequest $request, Post $post)
     {
         $input_post = $request['post'];
@@ -143,6 +150,7 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
     }
     
+    #ギルクエ編集画面
     public function edit(Post $post)
     {
         $areas = Area::get();
@@ -153,6 +161,7 @@ class PostController extends Controller
         return view('posts.edit')->with(['post' => $post, 'areas' => $areas, 'armors' => $armors, 'armor_ports' => $armor_ports,'monsters' => $monsters, 'weapons' => $weapons,]);
     }
     
+    #ギルクエ更新
     public function update(PostRequest $request, Post $post)
     {
         $input_post = $request['post'];
@@ -167,6 +176,7 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
     }
     
+    #ギルクエ削除
     public function delete(Post $post)
     {
         $post->delete();

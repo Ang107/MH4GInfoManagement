@@ -11,6 +11,7 @@ class Post extends Model
     
     use HasFactory;
     
+    #絞り込み検索による絞り込み
     public function filter($request)
     {
         $default_level = $request->query('Lv');
@@ -78,6 +79,8 @@ class Post extends Model
          
           return $posts;
     }
+    
+    #アカウント非公開の場合の絞り込み
     public function  user_private_filter($posts)
     {   
         $posts = $posts->whereHas('user', function ($query)
@@ -87,20 +90,19 @@ class Post extends Model
         return $posts;
     }
     
+    #ギルクエ一覧
     public function  getPaginateByLimitNewer(int $limit_count,$request)
     {   
         $posts = $this->filter($request);
         $posts = $this->user_private_filter($posts);
         return $posts->withCount('bookmarks')->orderBy('created_at', 'DESC')->paginate($limit_count);
     }
-    
     public function  getPaginateByLimitOlder(int $limit_count,$request)
     {
         $posts = $this->filter($request);
         $posts = $this->user_private_filter($posts);
         return $posts->withCount('bookmarks')->orderBy('created_at', 'ASC')->paginate($limit_count);
     }
-    
     public function getPaginateByLimitBookmark(int $limit_count,$request)
     {   
         $posts = $this->filter($request);
@@ -108,6 +110,7 @@ class Post extends Model
         return $posts->withCount('bookmarks')->orderBy('bookmarks_count', 'desc')->paginate($limit_count);
     }
     
+    #マイギルクエ一覧
     public function  getPaginateByLimitNewer_myposts(int $limit_count,$request)
     {   
         $posts = $this->filter($request);
@@ -115,7 +118,6 @@ class Post extends Model
         $posts = $posts->where('user_id', Auth::id());
         return $posts->withCount('bookmarks')->orderBy('created_at', 'DESC')->paginate($limit_count);
     }
-    
     public function  getPaginateByLimitOlder_myposts(int $limit_count,$request)
     {
         $posts = $this->filter($request);
@@ -123,7 +125,6 @@ class Post extends Model
         $posts = $posts->where('user_id', Auth::id());
         return $posts->withCount('bookmarks')->orderBy('created_at', 'ASC')->paginate($limit_count);
     }
-    
     public function getPaginateByLimitBookmark_myposts(int $limit_count,$request)
     {   
         $posts = $this->filter($request);
@@ -132,6 +133,7 @@ class Post extends Model
         return $posts->withCount('bookmarks')->orderBy('bookmarks_count', 'desc')->paginate($limit_count);
     }
     
+    #ブックマーク一覧
     public function  getPaginateByLimitNewer_mybookmark(int $limit_count,$request)
     {   
         $bookmark = new Bookmark();
@@ -141,7 +143,6 @@ class Post extends Model
         $posts = $this->user_private_filter($posts);
         return $posts->withCount('bookmarks')->orderBy('created_at', 'DESC')->paginate($limit_count);
     }
-    
     public function  getPaginateByLimitOlder_mybookmark(int $limit_count,$request)
     {
         $bookmark = new Bookmark();
@@ -151,7 +152,6 @@ class Post extends Model
         $posts = $this->user_private_filter($posts);
         return $posts->withCount('bookmarks')->orderBy('created_at', 'ASC')->paginate($limit_count);
     }
-    
     public function getPaginateByLimitBookmark_mybookmark(int $limit_count,$request)
     {   
         $bookmark = new Bookmark();
@@ -161,6 +161,7 @@ class Post extends Model
         $posts = $this->user_private_filter($posts);
         return $posts->withCount('bookmarks')->orderBy('bookmarks_count', 'desc')->paginate($limit_count);
     }
+    
     
     public function area_1()
     {
@@ -206,6 +207,7 @@ class Post extends Model
     {
         return $this->hasMany(Bookmark::class);  
     }
+    
     public function isBookmarkedBy($user): bool {
         return Bookmark::where('user_id', $user->id)->where('post_id', $this->id)->first() !==null;
     }
