@@ -25,10 +25,12 @@ use App\Http\Controllers\RoomController;
 
 Route::middleware('verified')->group(function () {
     
+    #アカウント設定
     Route::get('/config', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/config', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/config', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
+    #投稿
     Route::get('/posts/create', [PostController::class, 'create']);
     
     Route::get('/posts/myposts', [PostController::class, 'show_myposts']);
@@ -45,12 +47,14 @@ Route::middleware('verified')->group(function () {
     
     Route::delete('/posts/{post}', [PostController::class,'delete']);
     
+    #ユーザー
     Route::get('/users/edit', [UserController::class ,'edit']);
     
     Route::get('/users/{user}', [UserController::class ,'show']);
     
     Route::put('/users/{user}', [UserController::class, 'update']);
     
+    #DM
     Route::get('/DM',  [RoomController::class, 'index']);
     
     Route::get('/DM/{user}',  [RoomController::class, 'show']);
@@ -58,7 +62,7 @@ Route::middleware('verified')->group(function () {
     Route::post('/DM/{user}',  [MessageController::class, 'store']);
 });
 
-
+#認証無しで閲覧可能
 Route::get('/posts', [PostController::class, 'index']);
 
 Route::get('/posts/{post}', [PostController::class ,'show']);

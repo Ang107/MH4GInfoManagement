@@ -12,6 +12,7 @@ use App\Http\Requests\MessageRequest;
 
 class MessageController extends Controller
 {
+    #メッセージ登録
     public function store(MessageRequest $request, User $user, Message $message)
     {
         $input_message = $request['message'];

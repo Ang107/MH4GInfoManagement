@@ -304,6 +304,7 @@
                     document.getElementById(`form_${id}`).submit();
                 }
             }
+            //絞り込み検索時に検索時の情報に更新
             document.getElementById('Level').value = "{{ $request->query('Lv')}}";
             document.getElementById('LMonster').value = "{{ $request->query('Lmon')}}";
             document.getElementById('LMonsterArea').value = "{{$request->query('LmonA')}}";
@@ -318,7 +319,7 @@
             document.getElementById('Armor').value = "{{$request->query('Arm')}}";
             document.getElementById('ArmorPort').value = "{{ $request->query('ArmPo')}}";
             
-            
+            //絞り込みリセット
             function filterReset(){
                 document.getElementById('Level').value = -1;
                 document.getElementById('LMonster').value = 1;

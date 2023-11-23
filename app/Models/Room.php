@@ -25,6 +25,7 @@ class Room extends Model
         return $this->hasMany(Message::class);  
     }
     
+    #DM一覧
     public function  getPaginateByLimit()
     {   
         return $this->where('invite_user_id',Auth::id())->orWhere('invited_user_id', Auth::id())->orderBy('last_sent_at', 'DESC')->paginate(20);

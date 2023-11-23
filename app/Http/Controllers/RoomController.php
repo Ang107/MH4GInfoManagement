@@ -11,6 +11,7 @@ use App\Http\Controllers\RoomController;
 
 class RoomController extends Controller
 {
+    #ルーム登録
     public function store($invite_user_id,$invited_user_id)
     {
         $room = new Room();
@@ -20,11 +21,13 @@ class RoomController extends Controller
         return ($room);
     }
     
+    #ルーム一覧
     public function index(Room $room)
     {
         return view('room.index')->with(['rooms' => $room-> getPaginateByLimit()]);
     }
     
+    #ルーム詳細
     public function show(User $user)
     {
         $messages = new Message();
@@ -47,6 +50,8 @@ class RoomController extends Controller
         }
         
     }
+    
+    #最終メッセージ更新
     public function update($last_sent_message, $user_id_1, $user_id_2)
     {   
         $room = $this->get_room($user_id_1, $user_id_2);
@@ -57,6 +62,7 @@ class RoomController extends Controller
        
     }
     
+    #二人のユーザIDからルーム取得
     private function get_room($user_id_1, $user_id_2)
     {
         $room = new Room();

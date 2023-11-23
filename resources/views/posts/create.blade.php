@@ -173,6 +173,7 @@
                 </div>
             </div>
             <script>
+            //バリデーションエラー前の情報に更新
             if ("{{ old('post.default_level')}}" != ""){
                 document.getElementById('Level').value ="{{ old('post.default_level')}}";
             }
