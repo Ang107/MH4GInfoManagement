@@ -106,6 +106,8 @@ DMを送受信できます。<br>
  <p>・AWS-cloud9</p>
  
  <p>・Laravel 9.52.16</p>
+
+ <p>・tailwind</p>
  
   </br>
   
